@@ -25,7 +25,8 @@
 #define DEFAULT_REPO_SERVER  "http://downloads.raspberrypi.org/os_list_v3.json"
 
 /* Size of recovery FAT partition in MB when using reformat drive initialization method. */
-#define RESCUE_PARTITION_SIZE  63
+//#define RESCUE_PARTITION_SIZE  63
+#define RESCUE_PARTITION_SIZE  (3*1024)
 
 /* Files that are currently on the FAT partition are normally saved to memory during
  * repartitioning.

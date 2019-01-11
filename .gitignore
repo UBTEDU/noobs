@@ -2,3 +2,5 @@ buildroot/output/
 buildroot/dl/
 output/
 *.qm
+/noobs_3.0.creator.user
+/recovery/recovery.pro.user

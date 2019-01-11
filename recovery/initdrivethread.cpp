@@ -247,6 +247,10 @@ bool InitDriveThread::method_resizePartitions()
     QByteArray partitionTable;
     uint startOfOurPartition = getFileContents(sysclassblock(_drive, 1)+"/start").trimmed().toUInt();
     uint sizeOfOurPartition  = getFileContents(sysclassblock(_drive, 1)+"/size").trimmed().toUInt();
+    if (sizeOfOurPartition < (RESCUE_PARTITION_SIZE*1024*2))
+    {
+        sizeOfOurPartition = RESCUE_PARTITION_SIZE*1024*2;
+    }
     uint startOfExtended = startOfOurPartition+sizeOfOurPartition;
 
     // Align start of settings partition on 4 MiB boundary
